@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moviraider - Estrategia de Crecimiento Personalizada | Copy Estratega</title>
+  <meta property="og:title" content="Moviraider - Estrategia de Crecimiento Personalizada">
+  <meta property="og:description" content="Una auditoria y estrategia de crecimiento construida especificamente para Moviraider por Copy Estratega.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://danigdecelis.github.io/moviraider-strategy/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Moviraider - Estrategia de Crecimiento Personalizada">
+  <meta name="twitter:description" content="Una auditoria y estrategia de crecimiento construida especificamente para Moviraider por Copy Estratega.">
+  <link rel="icon" type="image/png" href="https://storage.googleapis.com/gpt-engineer-file-uploads/ENnY1cQr8yb82cqirDaLRejSItf1/uploads/1759866240739-LeadLinker%20Logo%20Favicon%20.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:        #C9A84C;
+      --gold-dark:   #A8893A;
+      --gold-light:  rgba(201, 168, 76, 0.08);
+      --gold-border: rgba(201, 168, 76, 0.2);
+      --dark:        #0A0A0A;
+      --dark-mid:    #1A1A1A;
+      --body-text:   #555555;
+      --muted:       #999999;
+      --off-white:   #F8F6F0;
+      --white:       #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark-mid); background: var(--white); line-height: 1.75; font-size: 16px; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(10,10,10,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; }
+    .nav-btn { border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 10px 20px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .nav-btn:hover { background: var(--gold); color: var(--dark); }
+
+    .card { padding: 80px 24px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .card.dark { background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .card.off-white { background: var(--off-white); }
+    .card.white { background: var(--white); }
+    .inner { max-width: 800px; margin: 0 auto; }
+
+    .section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; color: var(--white); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+    h2.on-dark { color: var(--white); }
+    h2.on-light { color: var(--dark-mid); }
+    h3 { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; }
+    .body-text { font-size: 16px; line-height: 1.75; }
+    .body-text.on-dark { color: rgba(255,255,255,0.7); }
+    .body-text.on-light { color: var(--body-text); }
+
+    .hero-alert { display: inline-block; background: var(--gold); color: var(--dark); font-size: 18px; font-weight: 700; padding: 18px 40px; border-radius: 4px; margin-bottom: 36px; }
+    .video-wrap { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--gold-border); border-radius: 10px; overflow: hidden; margin-bottom: 36px; background: rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.3); font-size:14px; }
+    .video-wrap iframe { width: 100%; height: 100%; display: block; }
+
+    .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+    .toc-item { background: var(--white); border: 1px solid var(--gold-border); border-radius: 6px; padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .toc-num { font-size: 28px; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; font-family: 'Playfair Display', serif; }
+    .toc-item h4 { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 4px; }
+    .toc-item p { font-size: 13px; color: var(--body-text); line-height: 1.5; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .who-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 8px; }
+    .who-body { font-size: 15px; color: var(--body-text); line-height: 1.7; }
+    .auditoria-inner { display: flex; gap: 56px; align-items: flex-start; }
+    .daniel-photo-large { width: 100%; max-width: 300px; border-radius: 16px; object-fit: cover; object-position: center 0%; aspect-ratio: 3/4; flex-shrink: 0; border: 1px solid var(--gold-border); }
+    @media (max-width: 768px) { .auditoria-inner { flex-direction: column-reverse; } .daniel-photo-large { max-width: 100%; } }
+
+    .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .finding-card { background: var(--off-white); border-radius: 10px; padding: 24px; border: 1px solid rgba(0,0,0,0.06); }
+    .finding-card.on-dark { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    .finding-card h4 { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 8px; }
+    .finding-card h4.on-dark { color: var(--white); }
+    .finding-card p { font-size: 14px; color: var(--body-text); line-height: 1.6; }
+    .finding-card p.on-dark { color: rgba(255,255,255,0.6); }
+
+    .tech-row { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+    .tech-item { display: flex; flex-direction: column; gap: 4px; }
+    .tech-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
+    .tech-value { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    .journey { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+    .journey-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 28px; position: relative; }
+    .journey-step:not(:last-child)::before { content: ''; position: absolute; left: 19px; top: 40px; width: 2px; bottom: 0; background: var(--gold-border); }
+    .journey-circle { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; border: 2px solid var(--gold); background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--gold); z-index: 1; }
+    .journey-step h4 { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 4px; }
+    .journey-step p { font-size: 14px; color: var(--body-text); line-height: 1.6; }
+    .closing-line { font-size: 15px; font-style: italic; color: var(--body-text); border-left: 3px solid var(--gold); padding-left: 16px; margin-top: 32px; }
+
+    .support-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .support-item { background: var(--white); border-radius: 10px; padding: 24px; border: 1px solid rgba(0,0,0,0.06); }
+    .support-item h4 { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 8px; }
+    .support-item p { font-size: 14px; color: var(--body-text); line-height: 1.6; }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .stat-block { border: 1px solid var(--gold-border); border-radius: 10px; padding: 32px 28px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+    .stat-label { font-size: 13px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .stat-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .stats-closing { margin-top: 40px; font-size: 16px; color: rgba(255,255,255,0.7); font-style: italic; border-top: 1px solid var(--gold-border); padding-top: 28px; }
+
+    .magnet-list { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .magnet-item { border: 1px solid var(--gold-border); border-radius: 10px; padding: 28px; display: flex; gap: 20px; align-items: flex-start; }
+    .magnet-item.featured { background: var(--gold-light); border-color: var(--gold); }
+    .magnet-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; }
+    .magnet-item h4 { font-size: 16px; font-weight: 700; color: var(--dark-mid); margin-bottom: 8px; }
+    .magnet-item p { font-size: 14px; color: var(--body-text); line-height: 1.6; }
+    .magnet-badge { display: inline-block; background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; margin-bottom: 8px; }
+
+    /* Example page preview - Moviraider brand */
+    .example-link { display: block; text-decoration: none; border: 1px solid var(--gold-border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+    .example-link:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(201,168,76,0.15); transform: translateY(-4px); }
+    .example-preview { background: #0A0A0A; padding: 40px 36px; }
+    .ep-badge { display: inline-block; background: #F37021; color: white; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
+    .ep-headline { font-size: 26px; font-weight: 900; color: #FFFFFF; line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.3px; font-family: 'Inter', sans-serif; }
+    .ep-headline span { color: #F37021; }
+    .ep-sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.5; font-family: 'Inter', sans-serif; }
+    .ep-stats { display: flex; gap: 24px; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(243,112,33,0.2); }
+    .ep-stat { display: flex; flex-direction: column; gap: 2px; }
+    .ep-stat-num { font-size: 22px; font-weight: 900; color: #F37021; font-family: 'Inter', sans-serif; line-height: 1; }
+    .ep-stat-label { font-size: 11px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 1px; font-family: 'Inter', sans-serif; margin-top:4px; }
+    .example-bar { background: var(--off-white); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .example-bar .url { font-size: 13px; color: var(--muted); font-family: monospace; }
+    .example-bar .view { font-size: 13px; font-weight: 700; color: var(--gold); }
+
+    .build-section { margin-bottom: 48px; }
+    .build-section:last-child { margin-bottom: 0; }
+    .build-title { font-size: 20px; font-weight: 700; color: var(--dark-mid); margin-bottom: 12px; }
+    .build-desc { font-size: 15px; color: var(--body-text); margin-bottom: 16px; line-height: 1.65; }
+    .build-list { list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0; }
+    .build-list li { font-size: 14px; color: var(--body-text); padding-left: 20px; position: relative; line-height: 1.6; }
+    .build-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .note-box { background: var(--off-white); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 24px 28px; margin-top: 24px; }
+    .note-box p { font-size: 14px; color: var(--body-text); line-height: 1.7; }
+
+    .guarantee-box { background: var(--gold-light); border: 1px solid var(--gold-border); border-radius: 10px; padding: 32px; margin-bottom: 48px; text-align: center; }
+    .guarantee-box p { font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.5; font-style: italic; }
+    .steps-list { display: flex; flex-direction: column; gap: 0; }
+    .step-item { display: flex; gap: 20px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .step-item:last-child { border-bottom: none; }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; min-width: 36px; }
+    .step-who { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 4px; }
+    .step-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .step-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .guarantee-repeat { font-size: 15px; color: rgba(255,255,255,0.6); font-style: italic; text-align: center; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--gold-border); }
+
+    .cta-card { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.3); text-align: center; }
+    .cta-card h2 { color: var(--white); margin-bottom: 12px; }
+    .cta-card .sub { color: rgba(255,255,255,0.5); font-size: 15px; margin-bottom: 40px; }
+    .cta-reply { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+    .cta-reply span { color: var(--white); font-weight: 600; }
+    .cta-or { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.25); margin: 24px 0; }
+    .cta-calendly-btn { border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 16px 36px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .cta-calendly-btn:hover { background: var(--gold); color: var(--dark); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .faq-item { background: var(--off-white); border-radius: 10px; padding: 24px 28px; border: 1px solid rgba(0,0,0,0.06); }
+    .faq-q { font-size: 16px; font-weight: 700; color: var(--dark-mid); margin-bottom: 10px; }
+    .faq-a { font-size: 15px; color: var(--body-text); line-height: 1.7; }
+
+    .about-card { background: var(--off-white); border-radius: 10px; padding: 40px; display: flex; gap: 32px; align-items: flex-start; }
+    .daniel-photo-sm { width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0; border: 2px solid var(--gold); object-fit: cover; }
+    .about-name { font-size: 20px; font-weight: 700; color: var(--dark-mid); margin-bottom: 2px; }
+    .about-role { font-size: 14px; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+    .about-links { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+    .about-links a { color: var(--gold); text-decoration: none; }
+    .about-bio { font-size: 15px; color: var(--body-text); line-height: 1.7; }
+
+    .email-sequence { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .email-card-v2 { background: var(--off-white); border-radius: 10px; padding: 24px 28px; border: 1px solid rgba(0,0,0,0.06); display: flex; gap: 20px; align-items: flex-start; }
+    .email-day { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 800; color: var(--gold); line-height: 1; flex-shrink: 0; min-width: 52px; }
+    .email-day span { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); display: block; margin-top: 2px; }
+    .email-subject { font-size: 15px; font-weight: 700; color: var(--dark-mid); margin-bottom: 6px; }
+    .email-hook { font-size: 13px; color: var(--body-text); line-height: 1.6; font-style: italic; }
+    .email-purpose { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-top: 8px; }
+
+    footer { background: var(--dark); padding: 36px 24px; border-top: 1px solid rgba(201,168,76,0.15); text-align: center; }
+    .footer-logo { height: 36px; margin-bottom: 12px; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 700px) {
+      .toc-grid, .two-col, .findings-grid, .support-cols, .stats-grid { grid-template-columns: 1fr; }
+      .about-card { flex-direction: column; }
+      .card { padding: 60px 20px; }
+      .hero-alert { font-size: 15px; padding: 14px 24px; }
+      .ep-stats { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <img src="https://danigdecelis.github.io/factor-rh-strategy/logo-ca.png" class="nav-logo" alt="Copy Estratega">
+    <button class="nav-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/danigdecelis/meeting'})">Agendar Llamada</button>
+  </div>
+</nav>
+
+<!-- CARD 1: TITULO -->
+<div class="card dark" style="padding-top: 120px;">
+  <div class="inner">
+    <div class="video-wrap"><div>[Video personalizado de Daniel para Noufel]</div></div>
+    <div class="hero-alert">No te saltes el video de arriba</div>
+    <h1>Moviraider<br>Estrategia de Crecimiento Personalizada</h1>
+  </div>
+</div>
+
+<!-- CARD 2: INTRO -->
+<div class="card white">
+  <div class="inner">
+    <p class="body-text on-light">
+      Este documento fue construido especificamente para <strong>Moviraider</strong>. Cada hallazgo, cada recomendacion y cada ejemplo esta basado en tu sitio web real, tu canal de YouTube, tu programa de franquicia y la forma en que hoy llega (o no llega) un franquiciado potencial a Moviraider.
+    </p>
+  </div>
+</div>
+
+<!-- CARD 3: QUE HAY ADENTRO -->
+<div class="card off-white">
+  <div class="inner">
+    <span class="section-label">Que hay adentro</span>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:24px;">Tiempo estimado de lectura: 8 minutos. Puedes pausar y retomar cuando quieras.</p>
+    <div class="toc-grid">
+      <div class="toc-item"><div class="toc-num">01</div><div><h4>La Auditoria</h4><p>Lo que encontramos en LinkedIn, tu sitio web, YouTube y tu programa de franquicia</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">02</div><div><h4>Los Problemas</h4><p>Que le esta costando franquiciados y conversiones B2C a Moviraider</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">03</div><div><h4>Los Numeros</h4><p>Cuanto vale ese problema en cada apertura no concretada</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">04</div><div><h4>Lead Magnets Sugeridos</h4><p>Ideas concretas para capturar inversores y compradores antes de que se vayan</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">05</div><div><h4>La Pagina de Ejemplo</h4><p>La pagina de franquicia ya construida, lista para reemplazar el 404 actual</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">06</div><div><h4>Que Mas Construiriamos</h4><p>El sistema completo: nurture, carrito abandonado, newsletter y YouTube</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~2 min</p></div></div>
+      <div class="toc-item"><div class="toc-num">07</div><div><h4>Nuestra Oferta y Garantia</h4><p>Como garantizamos resultados y como funciona el proceso</p><p style="font-size:11px; color:var(--gold); margin-top:6px; font-weight:600;">~1 min</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 4: LA AUDITORIA -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">La Auditoria</span>
+    <h2 class="on-light" style="margin-bottom: 40px;">Hola Noufel, mi nombre es Daniel</h2>
+    <div class="auditoria-inner">
+      <img src="https://danigdecelis.github.io/factor-rh-strategy/daniel-photo.png" class="daniel-photo-large" alt="Daniel">
+      <div class="two-col">
+        <div>
+          <p class="who-label">Quien soy</p>
+          <p class="who-body">Soy el fundador de Copy Estratega. Trabajo con empresas que ya tienen autoridad, resultados y una metodologia probada, pero todavia no tienen el sistema digital que convierte esa autoridad en clientes nuevos de forma predecible. No vendemos campanas de publicidad ni gestion de redes. Construimos infraestructura.</p>
+        </div>
+        <div>
+          <p class="who-label">Como te encontre</p>
+          <p class="who-body">Llegue a Moviraider a traves de LinkedIn y de moviraider.es. Tras revisar el sitio, el canal de YouTube, el flujo de compra, la newsletter y la pagina de franquicia, encontre varias cosas que vale la pena compartir contigo como CTO.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 5: LINKEDIN -->
+<div class="card dark">
+  <div class="inner">
+    <span class="section-label">Paso 1: LinkedIn</span>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:8px; font-family:monospace;">linkedin.com/in/noufelgarces</p>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:32px; font-family:monospace;">linkedin.com/company/moviraider-patinetes-electricos</p>
+    <h3 style="color:var(--white); margin-bottom:24px;">Lo que encontre:</h3>
+    <div class="findings-grid">
+      <div class="finding-card on-dark"><h4 class="on-dark">Empresa con tamano real y pagina infrautilizada</h4><p class="on-dark">Moviraider aparece en LinkedIn como una empresa de 11 a 50 empleados con 11 tiendas operativas entre Espana y Mexico. La pagina tiene 267 seguidores. Para una marca con esa presencia fisica, esa cifra esta varios ordenes de magnitud por debajo de lo que la operacion ya justifica.</p></div>
+      <div class="finding-card on-dark"><h4 class="on-dark">Equipo directivo con presencia sin estrategia coordinada</h4><p class="on-dark">Eloisa Barea publica esporadicamente con su propio hashtag #lasreflexionesdeelo. Tu perfil como CTO existe, pero no hay un sistema coordinado de contenido entre los directivos que multiplique el alcance hacia inversores potenciales.</p></div>
+      <div class="finding-card on-dark"><h4 class="on-dark">El canal de YouTube no aparece referenciado</h4><p class="on-dark">Moviraider tiene un canal de YouTube con 57.800 suscriptores y 165 videos. Esa autoridad no se esta proyectando hacia LinkedIn, donde estan los emprendedores que evaluan abrir una franquicia.</p></div>
+      <div class="finding-card on-dark"><h4 class="on-dark">Cero contenido orientado al franquiciado</h4><p class="on-dark">Los posts visibles desde la pagina de empresa hablan a comprador final de patinete. No hay un hilo de contenido pensado para alguien con 25.000 euros buscando una franquicia rentable.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 6: WEBSITE -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">Paso 2: El Sitio Web</span>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:32px; font-family:monospace;">moviraider.es</p>
+    <h3 style="color:var(--dark-mid); margin-bottom:24px;">Lo que esta funcionando:</h3>
+    <div class="findings-grid">
+      <div class="finding-card"><h4>Prueba social masiva y verificable</h4><p>4.846 reseñas en Google con 4,9 estrellas, 38.247 clientes que han probado los productos y 11 tiendas fisicas. Es uno de los activos de credibilidad mas fuertes del sector de movilidad electrica en habla hispana.</p></div>
+      <div class="finding-card"><h4>SAT oficial de marcas reconocidas</h4><p>Servicio tecnico autorizado de Joyor, Kukirin, Dualtron, Ecoxtrem, ZWheel y Engwe. Para el comprador y para el inversor en franquicia, es la diferencia entre una tienda mas y una operacion homologada.</p></div>
+      <div class="finding-card"><h4>Tecnologia adecuada para el modelo</h4><p>Sitio construido sobre Odoo, lo que integra e-commerce con ERP y gestion de inventario sin fricciones. Es la base correcta para todo lo que viene despues.</p></div>
+      <div class="finding-card"><h4>Multiples puntos de contacto B2C</h4><p>Venta online, financiacion desde 85 euros al mes, garantia oficial de 3 anos, envio gratuito en 24 horas, agente de WhatsApp accesible. La experiencia de compra para particulares esta bien resuelta.</p></div>
+      <div class="finding-card"><h4>Catalogo segmentado por uso</h4><p>Patinetes por tipo de usuario (diario, off-road, reparto), recambios, accesorios, formacion. Permite que el visitante se autoclasifique antes de comprar, lo cual mejora la conversion en e-commerce.</p></div>
+      <div class="finding-card"><h4>Canal de YouTube fuerte</h4><p>57.800 suscriptores, 165 videos, frecuencia de ~2 videos por semana. Es uno de los activos de contenido mas fuertes del sector en espanol.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 7: ADS + TECH -->
+<div class="card dark">
+  <div class="inner">
+    <span class="section-label">Paso 3: Publicidad y Tecnologia</span>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:32px; font-family:monospace;">adstransparency.google.com/?domain=moviraider.es</p>
+    <h3 style="color:var(--white); margin-bottom:24px;">Lo que encontre:</h3>
+    <div class="tech-row">
+      <div class="tech-item"><span class="tech-label">Estado de Google Ads sin confirmar</span><span class="tech-value">El Centro de Transparencia de Anuncios usa renderizado JavaScript y no pudo leerse de forma programatica. Necesario confirmar visualmente si hay campanas activas.</span></div>
+      <div class="tech-item"><span class="tech-label">Stack analitico instalado</span><span class="tech-value">Google Analytics 4 y Google Tag Manager declarados en el banner de cookies bajo opt-in. La infraestructura de medicion existe, falta saber si hay eventos de conversion configurados mas alla de pageview.</span></div>
+      <div class="tech-item"><span class="tech-label">Sin plataforma de email detectada</span><span class="tech-value">No se encontraron scripts de Mailchimp, Klaviyo, ActiveCampaign ni similares. La newsletter existe como formulario, pero no hay automatizacion visible detras.</span></div>
+      <div class="tech-item"><span class="tech-label">Newsletter rota en la entrega</span><span class="tech-value">El formulario del footer promete 10% de descuento. En una prueba real de suscripcion, el email del descuento no llegaba ni a bandeja principal, ni a promociones, ni a spam. La promesa esta hecha publicamente y no se cumple.</span></div>
+      <div class="tech-item"><span class="tech-label">Pagina de franquicia caida</span><span class="tech-value">moviraider.es/franquicia devuelve un error 404. Es la unica URL directa que un potencial franquiciado podria visitar despues de ver el modelo en buscadores, directorios o tu canal de YouTube. La puerta esta cerrada.</span></div>
+      <div class="tech-item"><span class="tech-label">Sin captura de email previa al carrito</span><span class="tech-value">En el flujo de e-commerce no se solicita email antes de anadir un patinete al carrito. Eso elimina la posibilidad de enviar emails de carrito abandonado, una de las palancas de conversion mas rentables en e-commerce.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 8: TRANSITION -->
+<div class="card off-white" style="padding: 60px 24px;">
+  <div class="inner" style="text-align:center;">
+    <span class="section-label">Auditoria Completa</span>
+    <h2 class="on-light">Los Problemas</h2>
+    <p class="body-text on-light" style="max-width:600px; margin: 20px auto 0;">Ahora que sabemos lo que hay, esto es lo que revelan esos hallazgos sobre lo que le esta costando franquiciados y conversiones B2C a Moviraider hoy mismo.</p>
+  </div>
+</div>
+
+<!-- CARD 9: PROBLEM 1 -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">Problema 1</span>
+    <h2 class="on-light">La puerta de entrada al franquiciado esta rota.</h2>
+    <p class="body-text on-light" style="margin-top:20px;">moviraider.es/franquicia devuelve un error 404. Es la URL natural a la que llegaria cualquier persona que escuche hablar de Moviraider y quiera evaluar abrir una franquicia. Hoy llega a una pagina que no existe. El unico camino que queda es el numero de WhatsApp del footer, lo cual exige una iniciativa adicional de alguien que probablemente esta evaluando tambien otras franquicias del sector.</p>
+    <h3 style="margin-top:36px; margin-bottom:0; color:var(--dark-mid);">Asi se ve el recorrido actual de un franquiciado potencial:</h3>
+    <div class="journey">
+      <div class="journey-step"><div class="journey-circle">1</div><div><h4>Descubre el modelo</h4><p>Ve un patinete Moviraider en la calle, escucha a un amigo, lee un articulo sobre franquicias rentables o ve un video del canal de YouTube. Le interesa la idea de abrir una tienda.</p></div></div>
+      <div class="journey-step"><div class="journey-circle">2</div><div><h4>Busca en Google</h4><p>Escribe "franquicia Moviraider" o "abrir tienda Moviraider". Encuentra moviraider.es/franquicia entre los primeros resultados.</p></div></div>
+      <div class="journey-step"><div class="journey-circle">3</div><div><h4>Hace clic en el enlace</h4><p>Espera ver un dossier, un video del modelo, datos de inversion y rentabilidad, testimonios de franquiciados actuales. En lugar de eso, error 404.</p></div></div>
+      <div class="journey-step"><div class="journey-circle">4</div><div><h4>Vuelve a buscar y entra a la competencia</h4><p>Hace una busqueda relacionada y encuentra "franquicia patinete electrico", "franquicia 360Scooters" u otra marca del sector que tiene su pagina de captacion bien construida. Ahi deja su email.</p></div></div>
+    </div>
+    <p class="closing-line">Cada franquicia perdida por este error vale 25.000 euros de inversion inicial y la corriente recurrente de royalties durante 5 anos.</p>
+  </div>
+</div>
+
+<!-- CARD 10: PROBLEM 2 -->
+<div class="card off-white">
+  <div class="inner">
+    <span class="section-label">Problema 2</span>
+    <h2 class="on-light">Hay leads que llegan al sitio y se van sin dejar rastro porque la infraestructura de captura no funciona.</h2>
+    <p class="body-text on-light" style="margin-top:20px;">Moviraider tiene un sitio que recibe trafico real, tanto B2C como de inversores potenciales que escuchan hablar de la marca. Pero el sistema que deberia capturar ese trafico esta roto en dos puntos criticos.</p>
+    <div class="support-cols">
+      <div class="support-item"><h4>La newsletter promete y no entrega</h4><p>El formulario del footer dice "Suscribete y recibe 10% de descuento en tu primera compra". Verificado: el email del descuento no llega. Cada persona que se suscribe vive una promesa incumplida desde el primer contacto con la marca, justo en el momento en que la confianza estaba mas alta.</p></div>
+      <div class="support-item"><h4>El carrito abandonado es invisible</h4><p>Anadir un patinete al carrito en moviraider.es no requiere email. Cuando el visitante se va (el 70% lo hace), Moviraider no tiene forma de recuperarlo. En un sector con ticket medio de 600 a 1.200 euros, eso es el grueso del pipeline B2C diario perdiendose silenciosamente.</p></div>
+      <div class="support-item"><h4>El stack analitico esta pero no es accionable</h4><p>GA4 y GTM declarados, pero sin plataforma de email conectada y sin eventos de conversion claros sobre lead capture. Los datos existen, lo que falta es la maquinaria que los convierte en seguimiento automatico.</p></div>
+    </div>
+    <p class="closing-line">El trafico ya existe. Lo que falta es el sistema que lo convierte en lista y en cliente recuperado.</p>
+  </div>
+</div>
+
+<!-- CARD 11: PROBLEM 3 -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">Problema 3</span>
+    <h2 class="on-light">El canal de YouTube de 57.800 suscriptores no le habla al franquiciado.</h2>
+    <p style="font-size:13px; color:var(--muted); margin: 12px 0 24px; font-family:monospace;">youtube.com/channel/UCgP5-kMOMc3oZfuduq5a-Zw</p>
+    <p class="body-text on-light">Moviraider tiene un canal con 57.800 suscriptores y 165 videos publicados con frecuencia de aproximadamente 2 videos por semana. Es uno de los activos de contenido mas fuertes del sector de movilidad electrica en espanol. Pero el 100% de ese contenido esta orientado al usuario final del patinete: reviews, comparativas, mantenimiento, novedades. No hay un solo video pensado para alguien que evalua abrir una franquicia Moviraider.</p>
+    <div class="support-cols">
+      <div class="support-item"><h4>Lo que deberia existir en paralelo</h4><p>Una serie de videos cortos dirigida a inversores: cuanto gana realmente una franquicia Moviraider en su primer ano, como es un dia tipico en una tienda, testimonios de franquiciados actuales, recorrido por una apertura nueva, perfil del franquiciado que funciona.</p></div>
+      <div class="support-item"><h4>Lo que cuesta no tenerlo</h4><p>57.800 personas siguen el canal porque les interesa la movilidad electrica. Un porcentaje no despreciable es exactamente el perfil que abre una franquicia: emprendedores con conocimiento del sector y capital disponible. Cada video que no se hace para ellos es un franquiciado al que nunca se le propone formalmente la conversacion.</p></div>
+    </div>
+    <p class="closing-line">El canal ya existe. Lo que falta es la rama de contenido que lo conecta con el lado mas rentable del negocio.</p>
+  </div>
+</div>
+
+<!-- CARD 12: LOS NUMEROS -->
+<div class="card dark">
+  <div class="inner">
+    <span class="section-label">Los Numeros</span>
+    <h2 class="on-dark">Una sola franquicia adicional al ano paga toda la infraestructura.</h2>
+    <p class="body-text on-dark" style="margin-top:20px;">Con una franquicia Moviraider valorada en 25.000 euros de inversion inicial mas royalties recurrentes durante 5 anos, los numeros del modelo son contundentes. Todos los calculos usan supuestos conservadores de mercado.</p>
+    <div class="stats-grid">
+      <div class="stat-block"><div class="stat-num">25K€</div><div class="stat-label">Inversion inicial por franquicia</div><div class="stat-body">Canon de entrada de 5.999 euros + apertura. Royalty del 2% sobre facturacion durante 5 anos. Cada apertura es un activo recurrente, no un cliente unico.</div></div>
+      <div class="stat-block"><div class="stat-num">4-12</div><div class="stat-label">Aperturas nuevas al ano</div><div class="stat-body">Empresas con pagina de captacion, lead magnet y nurture sequence en el sector de franquicias convierten consistentemente entre 4 y 12 aperturas anuales sobre trafico organico.</div></div>
+      <div class="stat-block"><div class="stat-num">70%</div><div class="stat-label">Tasa de abandono de carrito</div><div class="stat-body">Sin captura de email previa, Moviraider pierde todos los dias el grueso de su pipeline B2C. Una secuencia de carrito abandonado recupera entre el 8% y el 12% de esos carritos.</div></div>
+      <div class="stat-block"><div class="stat-num">57.8K</div><div class="stat-label">Suscriptores actuales de YouTube</div><div class="stat-body">Una fraccion minima de esa audiencia es perfil de franquiciado. Con contenido especifico y un lead magnet correcto, esa audiencia puede convertirse en pipeline B2B sin generar trafico nuevo.</div></div>
+    </div>
+    <p class="stats-closing">Una sola franquicia adicional al ano cubre con holgura toda la construccion del sistema. El resto es ganancia neta sobre infraestructura que ya esta operando.</p>
+  </div>
+</div>
+
+<!-- CARD 13: LEAD MAGNETS -->
+<div class="card off-white">
+  <div class="inner">
+    <span class="section-label">Lead Magnets Sugeridos</span>
+    <h2 class="on-light">Cinco ideas, una construida.</h2>
+    <p class="body-text on-light" style="margin-top:20px;">La #1 esta enfocada al lado de la franquicia (alto ticket). Las siguientes amplian el sistema tambien al lado B2C.</p>
+    <div class="magnet-list">
+      <div class="magnet-item featured">
+        <div class="magnet-num">01</div>
+        <div>
+          <span class="magnet-badge">La construida</span>
+          <h4>"Dossier de la Franquicia Moviraider: cuanto gana realmente una tienda de patinetes electricos en su primer ano"</h4>
+          <p>Un PDF gated de 12 a 15 paginas con la economia real del modelo, P&L tipo de una tienda, tiempo de retorno de la inversion, perfil del franquiciado que funciona, casos de aperturas actuales y proceso de incorporacion paso a paso. Dirigido a emprendedores con 25.000 a 40.000 euros que evaluan abrir una franquicia en movilidad electrica. Esta es la pieza que reemplaza definitivamente al 404 actual de la pagina de franquicia. Es el lead magnet sobre el que esta construida la pagina de ejemplo a continuacion.</p>
+        </div>
+      </div>
+      <div class="magnet-item"><div class="magnet-num">02</div><div><h4>"Calculadora de Rentabilidad de Franquicia Moviraider"</h4><p>Un PDF rellenable o herramienta web que permite al prospecto estimar ingresos esperados segun ciudad, formato de local y volumen de operacion. Altamente compartible cuando alguien necesita justificar la inversion ante un socio o un banco.</p></div></div>
+      <div class="magnet-item"><div class="magnet-num">03</div><div><h4>"Guia de Mantenimiento del Patinete Electrico: 12 puntos que alargan la vida util y reducen averias en un 60%"</h4><p>PDF descargable dirigido al usuario final actual o futuro. Resuelve un dolor real que el SAT de Moviraider conoce mejor que nadie. Captura email a cambio de informacion practica, abre la puerta al envio de promociones, recambios y servicios de taller.</p></div></div>
+      <div class="magnet-item"><div class="magnet-num">04</div><div><h4>"Comparativa honesta: los 5 patinetes electricos mejor valorados por menos de 800 euros en 2026"</h4><p>Guia comparativa firmada por el SAT de Moviraider con criterios tecnicos reales (autonomia, garantia, recambios, calidad del soporte). Capta al comprador en fase de investigacion antes de que tome la decision en otro sitio.</p></div></div>
+      <div class="magnet-item"><div class="magnet-num">05</div><div><h4>"Webinar grabado: del primer taller a 11 tiendas, asi escala una franquicia de movilidad electrica en Espana"</h4><p>Video de 30 a 45 minutos contando la historia interna del crecimiento de Moviraider, con datos, decisiones clave y aprendizajes. Pieza de autoridad para inversores serios y combustible para campanas en LinkedIn.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 14: PAGINA DE EJEMPLO -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">La Pagina de Ejemplo</span>
+    <h2 class="on-light">No solo encontramos el problema. Tambien construimos la solucion.</h2>
+    <p class="body-text on-light" style="margin-top:20px; margin-bottom: 36px;">Aqui esta una version dedicada de la pagina de franquicia de Moviraider, construida especificamente como pagina de captura del Lead Magnet 1: el Dossier de la Franquicia. Reemplaza el 404 actual con una puerta de entrada que captura email y arranca la conversacion comercial.</p>
+
+    <a href="https://danigdecelis.github.io/moviraider-funnel/" target="_blank" rel="noopener" class="example-link">
+      <div class="example-preview">
+        <div class="ep-badge">Programa de Franquicia 2026</div>
+        <div class="ep-headline">Cuanto gana <span>realmente</span> una franquicia Moviraider en su primer ano</div>
+        <div class="ep-sub">El dossier completo del modelo de negocio que ya opera en 11 tiendas entre Espana y Mexico. Inversion real, royalties, P&L tipo, perfil del franquiciado y casos de aperturas actuales.</div>
+        <div class="ep-stats">
+          <div class="ep-stat"><span class="ep-stat-num">11</span><span class="ep-stat-label">Tiendas Operativas</span></div>
+          <div class="ep-stat"><span class="ep-stat-num">4.846</span><span class="ep-stat-label">Reseñas Google 4,9★</span></div>
+          <div class="ep-stat"><span class="ep-stat-num">38.247</span><span class="ep-stat-label">Clientes</span></div>
+        </div>
+      </div>
+      <div class="example-bar">
+        <span class="url">danigdecelis.github.io/moviraider-funnel</span>
+        <span class="view">Ver pagina en vivo →</span>
+      </div>
+    </a>
+
+    <div class="note-box">
+      <p><strong>Lo que cambia respecto al estado actual:</strong> Misma estetica Moviraider (dark + naranja). Hero reescrito para hablar al inversor, no al comprador de patinete. Email gate claro con una sola accion. Boton CTA que convierte visitantes en franquiciados potenciales calificados. Reemplaza el 404 actual con un punto de aterrizaje funcional.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 15: QUE MAS CONSTRUIRIAMOS -->
+<div class="card off-white">
+  <div class="inner">
+    <span class="section-label">Que Mas Construiriamos</span>
+    <h2 class="on-light">El sistema completo: nurture de franquicia, carrito B2C y reactivacion de newsletter.</h2>
+    <p class="body-text on-light" style="margin-top:20px; margin-bottom: 36px;">Todo escrito, cargado y listo para operar. No es un brief, es entrega.</p>
+
+    <div class="build-section">
+      <h3 class="build-title">A. Secuencia de nurture para franquiciados potenciales (6 emails en 60 dias)</h3>
+      <p class="build-desc">Acompana al inversor desde la descarga del dossier hasta la conversacion comercial sin presion, entregando valor real en cada mensaje.</p>
+      <div class="email-sequence">
+        <div class="email-card-v2"><div class="email-day">D1<span>Dia</span></div><div><div class="email-subject">Tu dossier de franquicia + el dato que la mayoria de los inversores se salta</div><div class="email-hook">Entrega del dossier + consejo de lectura. Lo que importa de una franquicia no es el canon, es la zona, el local y el perfil.</div><div class="email-purpose">Entrega + apertura de relacion</div></div></div>
+        <div class="email-card-v2"><div class="email-day">D4<span>Dia</span></div><div><div class="email-subject">La franquicia de movilidad electrica que se equivoca, se equivoca casi siempre por lo mismo</div><div class="email-hook">Educacion + objecion comun. Por que el SAT oficial es lo que separa a una tienda defendible de una commodity.</div><div class="email-purpose">Educacion del modelo</div></div></div>
+        <div class="email-card-v2"><div class="email-day">D10<span>Dia</span></div><div><div class="email-subject">Como se ve una franquicia Moviraider real al cabo de 12 meses</div><div class="email-hook">Caso concreto anonimizado con numeros reales. Ratio venta vs taller, ticket medio, recurrencia.</div><div class="email-purpose">Prueba social con datos</div></div></div>
+        <div class="email-card-v2"><div class="email-day">D20<span>Dia</span></div><div><div class="email-subject">Que pasa con los 25.000 euros realmente</div><div class="email-hook">Desglose honesto de la inversion. Que esta incluido, que no, y por que el royalty del 2% es sobre facturacion no sobre beneficio.</div><div class="email-purpose">Objecion economica</div></div></div>
+        <div class="email-card-v2"><div class="email-day">D35<span>Dia</span></div><div><div class="email-subject">Donde tendria que estar la siguiente Moviraider</div><div class="email-hook">CTA suave con ciudades prioritarias. Exclusividad geografica por orden de llegada genera urgencia honesta.</div><div class="email-purpose">CTA con urgencia real</div></div></div>
+        <div class="email-card-v2"><div class="email-day">D60<span>Dia</span></div><div><div class="email-subject">Lo que pasa si todavia no es el momento</div><div class="email-hook">Cierre del ciclo sin presion. Mantiene la puerta abierta para reingreso en 3, 6 o 12 meses.</div><div class="email-purpose">Cierre y reactivacion futura</div></div></div>
+      </div>
+    </div>
+
+    <div class="build-section">
+      <h3 class="build-title">B. Secuencia de carrito abandonado B2C (3 emails)</h3>
+      <p class="build-desc">Cambio operativo necesario en Odoo: solicitar email como primer paso del flujo de carrito. Recupera entre el 8% y el 12% del pipeline B2C diario que hoy se pierde sin rastro.</p>
+      <ul class="build-list">
+        <li><strong>Carrito 1 (1 hora despues):</strong> "Te dejaste el patinete a medias". CTA a WhatsApp + link al carrito guardado.</li>
+        <li><strong>Carrito 2 (24 horas):</strong> "Algo que probablemente no te contaron sobre el [MODELO]". Refuerzo del diferencial: SAT oficial multimarca.</li>
+        <li><strong>Carrito 3 (72 horas):</strong> "5% de descuento si lo cierras hoy". Incentivo final con cierre limpio.</li>
+      </ul>
+    </div>
+
+    <div class="build-section">
+      <h3 class="build-title">C. Reactivacion de la newsletter actual (2 emails de bienvenida)</h3>
+      <p class="build-desc">Cumple la promesa del 10% de descuento que hoy esta rota, e integra a los suscriptores existentes en un flujo automatizado.</p>
+      <ul class="build-list">
+        <li><strong>Bienvenida 1 (inmediato):</strong> "Aqui tienes tu 10% (y bienvenido a Moviraider)". Entrega del codigo y enlace al catalogo.</li>
+        <li><strong>Bienvenida 2 (dia 3):</strong> "3 cosas que la mayoria no sabe antes de comprar su primer patinete". Educacion + posicionamiento como referente tecnico.</li>
+      </ul>
+    </div>
+
+    <div class="build-section">
+      <h3 class="build-title">D. Pauta editorial de YouTube para franquicia (6 guiones)</h3>
+      <p class="build-desc">Anade una rama de contenido al canal existente dirigida al inversor potencial, sin tocar la linea actual B2C. Frecuencia sugerida: 1 video al mes.</p>
+      <ul class="build-list">
+        <li>"Cuanto gana realmente una franquicia Moviraider en su primer ano". Recorrido directo a una tienda en operacion.</li>
+        <li>"Asi se abre una franquicia Moviraider en 90 dias". Documental corto de una apertura real.</li>
+        <li>"Los 5 errores mas caros que cometen los franquiciados de movilidad electrica que no son Moviraider".</li>
+        <li>"Entrevista con el franquiciado de [CIUDAD]: del primer mes al ano 2". Caso real con caras y nombres.</li>
+        <li>"Que perfil de persona triunfa con una franquicia Moviraider (y cual no)". Filtro honesto del franquiciado ideal.</li>
+        <li>"Que es exactamente lo que viene incluido en los 25.000 euros". Desglose visual del canon, formacion, stock.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 16: GARANTIA -->
+<div class="card dark">
+  <div class="inner">
+    <span class="section-label">Nuestra Oferta y Garantia</span>
+    <div class="guarantee-box">
+      <p>"Tendremos tu sistema completo de captacion de franquiciados y recuperacion B2C en marcha en 30 dias y generando pipeline cualificado en 90 dias. Si no, seguimos trabajando sin coste adicional hasta lograrlo."</p>
+    </div>
+    <h3 style="color:var(--white); margin-bottom: 8px;">Asi funciona exactamente:</h3>
+    <div class="steps-list">
+      <div class="step-item"><div class="step-num">1</div><div><p class="step-who">Ambos</p><h4 class="step-title">Llamada de Arranque</h4><p class="step-body">Planeamos juntos el sistema completo. Alineamos lead magnet, secuencias y prioridades. Arranque dentro de los proximos 7 a 10 dias habiles.</p></div></div>
+      <div class="step-item"><div class="step-num">2</div><div><p class="step-who">Tu</p><h4 class="step-title">Compartis Accesos</h4><p class="step-body">Backend del sitio (Odoo), plataforma de email a definir y assets de marca. Es lo unico que necesitamos.</p></div></div>
+      <div class="step-item"><div class="step-num">3</div><div><p class="step-who">Hacemos Por Vos</p><h4 class="step-title">Pagina de Franquicia Lista</h4><p class="step-body">Ya construida y entregada. Live en danigdecelis.github.io/moviraider-funnel. Reemplaza el 404 actual.</p></div></div>
+      <div class="step-item"><div class="step-num">4</div><div><p class="step-who">Hacemos Por Vos</p><h4 class="step-title">Cargamos las 11 Comunicaciones Automatizadas</h4><p class="step-body">6 emails de nurture para franquiciados, 3 de carrito abandonado y 2 de bienvenida de newsletter. Todos escritos, configurados y cargados.</p></div></div>
+      <div class="step-item"><div class="step-num">5</div><div><p class="step-who">Hacemos Por Vos</p><h4 class="step-title">Conectamos el Carrito al Sistema</h4><p class="step-body">Modificacion del flujo de checkout en Odoo para capturar email antes del carrito. Integracion con la plataforma de email para disparar la secuencia automaticamente.</p></div></div>
+      <div class="step-item"><div class="step-num">6</div><div><p class="step-who">Hacemos Por Vos</p><h4 class="step-title">Pauta Editorial de YouTube para Franquicia</h4><p class="step-body">6 guiones de video listos para producir, con CTAs configurados hacia el dossier. Sin tocar tu linea actual de contenido B2C.</p></div></div>
+      <div class="step-item"><div class="step-num">7</div><div><p class="step-who">Hacemos Por Vos</p><h4 class="step-title">Entrega Completa Lista para Operar</h4><p class="step-body">Todo entregado, probado y listo para arrancar. Cero trabajo adicional de tu lado.</p></div></div>
+    </div>
+    <p class="guarantee-repeat">Si el sistema no esta operativo en 30 dias y generando pipeline calificado en 90, seguimos trabajando sin coste adicional hasta que lo este.</p>
+  </div>
+</div>
+
+<!-- CARD 17: CTA -->
+<div class="card cta-card">
+  <div class="inner">
+    <h2 class="on-dark">Listo para Avanzar?</h2>
+    <p class="cta-reply">Respondeme al correo que te envie y arrancamos la conversacion.</p>
+    <p class="cta-or">O</p>
+    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/danigdecelis/meeting'})">Agendar una llamada</button>
+  </div>
+</div>
+
+<!-- CARD 18: FAQS -->
+<div class="card white">
+  <div class="inner">
+    <span class="section-label">Preguntas Frecuentes</span>
+    <h2 class="on-light">Lo que la mayoria pregunta antes de empezar.</h2>
+    <div class="faq-list">
+      <div class="faq-item"><p class="faq-q">Es realmente hecho por ustedes?</p><p class="faq-a">Si. Nos encargamos de todo, desde la construccion hasta el lanzamiento. Tu equipo revisa, aprueba y lo pone en marcha.</p></div>
+      <div class="faq-item"><p class="faq-q">Que incluye exactamente el servicio?</p><p class="faq-a">Pagina de captura de franquicia construida sobre la marca Moviraider y optimizada para captura de email. 6 emails de nurture para franquiciados, 3 emails de carrito abandonado, 2 emails de bienvenida de newsletter, todos escritos y cargados. Modificacion del flujo de carrito en Odoo. 6 guiones de video de YouTube orientados al inversor. Toda la infraestructura tecnica conectada y operativa.</p></div>
+      <div class="faq-item"><p class="faq-q">Cuanto tiempo toma arrancar?</p><p class="faq-a">Arranque dentro de los proximos 7 a 10 dias habiles despues de la primera llamada.</p></div>
+      <div class="faq-item"><p class="faq-q">Que necesitan de nosotros?</p><p class="faq-a">Acceso al backend del sitio (Odoo), credenciales de la plataforma de email que decidamos usar y los assets de marca. Eso es todo.</p></div>
+      <div class="faq-item"><p class="faq-q">Cuanto cuesta?</p><p class="faq-a">La inversion la conversamos en la llamada. La pagina de ejemplo ya esta construida y es tuya, decidas o no avanzar.</p></div>
+      <div class="faq-item"><p class="faq-q">Cual es la garantia?</p><p class="faq-a">Tendremos tu sistema completo de captacion de franquiciados y recuperacion B2C en marcha en 30 dias y generando pipeline cualificado en 90 dias. Si no, seguimos trabajando sin coste adicional hasta lograrlo.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 19: ABOUT DANIEL -->
+<div class="card off-white">
+  <div class="inner">
+    <span class="section-label">Sobre Daniel</span>
+    <div class="about-card">
+      <img src="https://danigdecelis.github.io/factor-rh-strategy/daniel-photo.png" class="daniel-photo-sm" alt="Daniel Garcia de Celis">
+      <div>
+        <p class="about-name">Daniel Garcia de Celis</p>
+        <p class="about-role">Fundador, Copy Estratega</p>
+        <p class="about-links">daniel.gdecelis@gmail.com</p>
+        <p class="about-bio">Copy Estratega trabaja con consultores y expertos que ya tienen la metodologia, los resultados y la autoridad, pero todavia no tienen el sistema digital que convierte eso en clientes nuevos de forma predecible. Construimos infraestructura, no campanas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 20: FINAL CTA -->
+<div class="card cta-card">
+  <div class="inner">
+    <h2 class="on-dark">Empecemos</h2>
+    <p class="cta-reply">Respondeme al correo que te envie y arrancamos la conversacion.</p>
+    <p class="cta-or">O</p>
+    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/danigdecelis/meeting'})">Agendar una llamada</button>
+  </div>
+</div>
+
+<footer>
+  <img src="https://danigdecelis.github.io/factor-rh-strategy/logo-ca.png" class="footer-logo" alt="Copy Estratega">
+  <p class="footer-copy">2026 Copy Estratega. Todos los derechos reservados.</p>
+</footer>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
